@@ -10,11 +10,20 @@ private:
 public:
   HashMapVector() : v_data(nullptr) {};
   ~HashMapVector() = default;
-  virtual void insert(const std::string &key, T data) final;
-  virtual T find(const std::string &key) const final;
-  virtual void remove(const std::string &key) final;
+  virtual void insert(const std::string &key, T data) override = 0;
+  virtual T find(const std::string &key) const override final;
+  virtual void remove(const std::string &key) override = 0;
+};
 
-private:
+template <typename T> class HashMapVectorLP : public HashMapVector<T> {
+public:
+  virtual void insert(const std::string &key, T data) override final;
+  virtual void remove(const std::string &key) override final;
+};
+
+template <typename T> class HashMapVectorQP : public HashMapVector<T> {
+  virtual void insert(const std::string &key, T data) override final;
+  virtual void remove(const std::string &key) override final;
 };
 
 #endif //_HASH_MAP_VECTOR_

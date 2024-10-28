@@ -5,6 +5,7 @@
 
 template <typename T> class IHashMap {
 public:
+  virtual ~IHashMap() = default;
   virtual void insert(const std::string &key, T data) = 0;
   virtual T find(const std::string &key) = 0;
   virtual void remove(const std::string &key) = 0;

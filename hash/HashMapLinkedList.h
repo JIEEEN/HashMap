@@ -10,9 +10,9 @@ private:
 public:
   HashMapLinkedList() : v_p_data(nullptr) {};
   ~HashMapLinkedList() = default;
-  virtual void insert(const std::string &key, T data) final;
-  virtual T find(const std::string &key) const final;
-  virtual void remove(const std::string &key) final;
+  virtual void insert(const std::string &key, T data) override final;
+  virtual T find(const std::string &key) const override final;
+  virtual void remove(const std::string &key) override final;
 };
 
 #endif //_HASH_MAP_LINKED_LIST_
