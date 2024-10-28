@@ -11,7 +11,7 @@ public:
   HashMapVector() : v_data(nullptr) {};
   ~HashMapVector() = default;
   virtual void insert(const std::string &key, T data) final;
-  virtual T find(const std::string &key) final;
+  virtual T find(const std::string &key) const final;
   virtual void remove(const std::string &key) final;
 
 private:
